@@ -30,12 +30,12 @@ public class PlayerMovementControls : MonoBehaviour {
 		float playerMovementForce = playerMovementDir * MOVEMENT_SPEED;
 		if (raytracer.isOnGround())
 		{
-			Debug.Log("On the Ground");
+			//Debug.Log("On the Ground");
 		}
 		else
 		{
 			playerMovementForce *= 0.1f;
-			Debug.Log("In the Air");
+			//Debug.Log("In the Air");
 		}
 
 		playerBody.AddForce(new Vector2(playerMovementForce, 0));
