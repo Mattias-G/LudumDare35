@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementForce: 15.5
   MaxMovementSpeed: 7
-  AirControl: 0.2
+  AirControl: 0.8
   Friction: 10
 --- !u!114 &11495310
 MonoBehaviour:
