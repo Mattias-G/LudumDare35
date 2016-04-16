@@ -46,11 +46,11 @@ public class PlayerJumpControls : MonoBehaviour {
 			animator.SetTrigger("Jump");
 		}
 
-		if (hit.distance <= gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1)
-		{
-			if (pressedJump)
-			{
-				pressedJump = false;
+        if (pressedJump)
+        {
+            pressedJump = false;
+            if (hit.distance <= gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1)
+            {
 				animator.ResetTrigger("Fall");
 				animator.SetTrigger("Jump");
 				playerBody.velocity += Vector2.up * JUMP_SPEED;
