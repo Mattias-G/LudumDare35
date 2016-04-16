@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 401226}
   - 212: {fileID: 21241844}
+  - 114: {fileID: 11420576}
+  - 60: {fileID: 6089734}
   m_Layer: 0
   m_Name: spike
   m_TagString: Hazard
@@ -23,11 +25,42 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.733624, y: 0.3443266, z: 1}
+  m_LocalPosition: {x: 19.4, y: 0.35, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!60 &6089734
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167632}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.03124237, y: 0.37500003}
+      - {x: -0.22057343, y: -0.0036567748}
+      - {x: -0.375, y: -0.375}
+      - {x: 0.375, y: -0.375}
+      - {x: 0.24263382, y: -0.10292539}
+      - {x: 0.011022568, y: 0.36764625}
+--- !u!114 &11420576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32957797dd32a4f88d99a9695537ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21241844
 SpriteRenderer:
   m_ObjectHideFlags: 1
