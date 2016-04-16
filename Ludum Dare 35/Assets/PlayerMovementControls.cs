@@ -36,7 +36,7 @@ public class PlayerMovementControls : MonoBehaviour {
 		}
 		else
 		{
-			playerMovementForce *= 0.1f;
+			playerMovementForce *= AIR_CONTROL;
 			Debug.Log("In the Air");
 		}
 
