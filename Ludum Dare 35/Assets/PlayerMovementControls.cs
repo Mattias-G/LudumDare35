@@ -4,14 +4,13 @@ using System.Collections;
 public class PlayerMovementControls : MonoBehaviour {
 
 	[Range(0f, 25f)]
-	public float MOVEMENT_SPEED;
+	public float MOVEMENT_SPEED = 5;
 
 	Rigidbody2D playerBody;
 	Animator animator;
 
     // Use this for initialization
     void Start () {
-		MOVEMENT_SPEED = 5f;
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
 		animator = gameObject.GetComponent<Animator>();
 	}
@@ -23,7 +22,8 @@ public class PlayerMovementControls : MonoBehaviour {
 	void FixedUpdate()
 	{
 		float playerMovementDir = Input.GetAxisRaw("Horizontal");
-		playerBody.velocity = new Vector2(playerMovementDir * MOVEMENT_SPEED, playerBody.velocity.y);
+		//playerBody.velocity = new Vector2(playerMovementDir * MOVEMENT_SPEED, playerBody.velocity.y);
+		playerBody.AddForce(new Vector2(playerMovementDir * MOVEMENT_SPEED, 0));
 		if (playerMovementDir == 0)
 		{
 			animator.SetTrigger("Stop");

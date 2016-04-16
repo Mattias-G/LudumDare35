@@ -4,18 +4,19 @@ using System.Collections;
 public class PlayerJumpControls : MonoBehaviour {
 
 	[Range(0f, 25f)]
-	public float JUMP_SPEED;
+	public float JUMP_SPEED = 8;
 
 	Rigidbody2D playerBody;
 	Animator animator;
+	Raytracer raytracer;
 	bool pressedJump;
 	bool releasedJump;
 
 	// Use this for initialization
 	void Start () {
-		JUMP_SPEED = 8f;
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
 		animator = gameObject.GetComponent<Animator>();
+		raytracer = gameObject.GetComponent<Raytracer>();
 	}
 	
 	// Update is called once per frame
@@ -37,15 +38,14 @@ public class PlayerJumpControls : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		int defaultLayer = 1 << LayerMask.NameToLayer("Default");
-		RaycastHit2D hit = Physics2D.Raycast(playerBody.transform.position, Vector2.down, 100, defaultLayer);
+		RaycastHit2D hit = raytracer.getDistanceToGround();
+		Debug.Log(hit.distance);
 		if (hit.distance > gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.2)
 		{
 			//	animator.ResetTrigger("Fall");
 			animator.SetTrigger("Jump");
 		}
 
-		Debug.Log("Jump: " + hit.distance + " : " + (gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1));
 		if (hit.distance <= gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1)
 		{
 			if (pressedJump)
