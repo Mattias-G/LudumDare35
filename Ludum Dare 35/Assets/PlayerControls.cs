@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PlayerControls : MonoBehaviour {
 
+	[Range(0f, 25f)]
 	public float MOVEMENT_SPEED;
+	[Range(0f, 25f)]
 	public float JUMP_SPEED;
 
 	Rigidbody2D playerBody;
@@ -26,10 +28,15 @@ public class PlayerControls : MonoBehaviour {
 		float playerMovementDir = Input.GetAxisRaw("Horizontal");
 		playerBody.velocity = new Vector2(playerMovementDir * MOVEMENT_SPEED, playerBody.velocity.y);
 
-		int defaultLayer = 1 << LayerMask.NameToLayer ("Default");
-		if (pressedJump && playerBody.IsTouchingLayers(defaultLayer))
+		if (pressedJump)
 		{
-			playerBody.velocity += Vector2.up * JUMP_SPEED;
+			int defaultLayer = 1 << LayerMask.NameToLayer("Default");
+			RaycastHit2D hit = Physics2D.Raycast(playerBody.transform.position, Vector2.down, 100, defaultLayer);
+			Debug.Log("Jump: " + hit.distance + " : " + (gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1));
+			if (hit.distance <= gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1)
+			{
+				playerBody.velocity += Vector2.up * JUMP_SPEED;
+			}
 		}
 	}
 }
