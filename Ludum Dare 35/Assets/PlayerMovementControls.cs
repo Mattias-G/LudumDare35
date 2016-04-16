@@ -4,9 +4,10 @@ using System.Collections;
 public class PlayerMovementControls : MonoBehaviour {
 
 	[Range(0f, 25f)]
-	public float MOVEMENT_SPEED = 5;
+    public float MOVEMENT_SPEED = 5;
+    [Range(0f, 25f)]
 
-	Rigidbody2D playerBody;
+    Rigidbody2D playerBody;
 	Animator animator;
 
     // Use this for initialization
@@ -22,9 +23,11 @@ public class PlayerMovementControls : MonoBehaviour {
 	void FixedUpdate()
 	{
 		float playerMovementDir = Input.GetAxisRaw("Horizontal");
-		//playerBody.velocity = new Vector2(playerMovementDir * MOVEMENT_SPEED, playerBody.velocity.y);
+        //playerBody.velocity = new Vector2(playerMovementDir * MOVEMENT_SPEED, playerBody.velocity.y);
 		playerBody.AddForce(new Vector2(playerMovementDir * MOVEMENT_SPEED, 0));
-		if (playerMovementDir == 0)
+		playerBody.velocity = new Vector2(Mathf.Clamp(playerBody.velocity.x, -MAX_MOVEMENT_SPEED, MAX_MOVEMENT_SPEED),playerBody.velocity.y);
+
+        if (playerMovementDir == 0)
 		{
 			animator.SetTrigger("Stop");
 		}
