@@ -4,10 +4,10 @@ using System.Collections;
 public class PlayerShoot : MonoBehaviour {
 
 	[Range(5, 10)]
-	public float MAX_DISTANCE = 9;
+	public float MaxDistance = 9;
 	[Range(0, 5)]
-	public float MIN_DISTANCE = 3;
-	public float POWER_MODIFIER = 50;
+	public float MinDistance = 3;
+	public float PowerModifier = 50;
 
 	Rigidbody2D playerBody;
 
@@ -25,9 +25,9 @@ public class PlayerShoot : MonoBehaviour {
 			float x = pos.x - playerBody.position.x;
 			float y = pos.y - playerBody.position.y;
 			float angle = Mathf.Atan2(y, x);
-			float distance = Mathf.Max(Mathf.Min(Mathf.Sqrt(x * x + y * y), MAX_DISTANCE), MIN_DISTANCE);
+			float distance = Mathf.Max(Mathf.Min(Mathf.Sqrt(x * x + y * y), MaxDistance), MinDistance);
 
-			playerBody.AddForce(new Vector2(Mathf.Cos(angle) * distance * POWER_MODIFIER, Mathf.Sin(angle) * distance * POWER_MODIFIER));
+			playerBody.AddForce(new Vector2(Mathf.Cos(angle) * distance * PowerModifier, Mathf.Sin(angle) * distance * PowerModifier));
 		}
 	}
 }

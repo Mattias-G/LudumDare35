@@ -5,7 +5,7 @@ public class PlayerJumpControls : MonoBehaviour
 {
 
     [Range(1f, 25f)]
-    public float JUMP_SPEED = 8;
+    public float JumpSpeed = 8;
 
     Rigidbody2D playerBody;
     Animator animator;
@@ -61,7 +61,7 @@ public class PlayerJumpControls : MonoBehaviour
             {
                 animator.ResetTrigger("Fall");
                 animator.SetTrigger("Jump");
-                playerBody.velocity += Vector2.up * JUMP_SPEED;
+                playerBody.velocity += Vector2.up * JumpSpeed;
             }
         }
 
