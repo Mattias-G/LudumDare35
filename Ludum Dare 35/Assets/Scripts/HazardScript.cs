@@ -3,20 +3,11 @@ using System.Collections;
 
 public class HazardScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	void OnCollisionEnter2D(Collision2D other)
 	{
+		string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 		if (other.gameObject.tag == "Player")
-			UnityEngine.SceneManagement.SceneManager.LoadScene("PlayerTest");
+			UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene);
 	}
 
 }
