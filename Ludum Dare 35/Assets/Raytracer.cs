@@ -12,7 +12,7 @@ public class Raytracer : MonoBehaviour {
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
 	}
 
-	public RaycastHit2D getDistanceToGround()
+	public RaycastHit2D getRaycastToGround()
 	{
 		int currentFrame = Time.renderedFrameCount;
 		if (currentFrame - lastFrame > 0)
@@ -24,5 +24,11 @@ public class Raytracer : MonoBehaviour {
 			return hit;
 		}
 		return lastHit;
+	}
+
+	public bool isOnGround()
+	{
+		RaycastHit2D hit = getRaycastToGround();
+		return hit.distance > 0 && hit.distance < gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1;
 	}
 }

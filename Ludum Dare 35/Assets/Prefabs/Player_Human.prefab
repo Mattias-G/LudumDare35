@@ -9,13 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 423514}
   - 212: {fileID: 21253648}
-  - 61: {fileID: 6148674}
   - 50: {fileID: 5027964}
   - 114: {fileID: 11450726}
   - 95: {fileID: 9578900}
   - 114: {fileID: 11444680}
-  - 114: {fileID: 11477490}
-  - 114: {fileID: 11441218}
+  - 60: {fileID: 6040008}
+  - 114: {fileID: 11416586}
+  - 114: {fileID: 11495310}
   m_Layer: 8
   m_Name: Player_Human
   m_TagString: Untagged
@@ -52,8 +52,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6148674
-BoxCollider2D:
+--- !u!60 &6040008
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -64,8 +64,15 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 1.4}
+  m_Points:
+    m_Paths:
+    - - {x: -0.08426905, y: 0.6522455}
+      - {x: -0.2391845, y: 0.4742272}
+      - {x: -0.25414205, y: -0.49664044}
+      - {x: 0.022827558, y: -0.7255614}
+      - {x: 0.28405747, y: -0.48117638}
+      - {x: 0.23518032, y: 0.46741557}
+      - {x: 0.12513795, y: 0.6603923}
 --- !u!95 &9578900
 Animator:
   serializedVersion: 3
@@ -83,7 +90,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11441218
+--- !u!114 &11416586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,7 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MOVEMENT_SPEED: 15.5
---- !u!114 &11477490
+  MAX_MOVEMENT_SPEED: 7
+  AIR_CONTROL: 0.2
+  FRICTION: 10
+--- !u!114 &11495310
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -12,6 +12,8 @@ GameObject:
   - 58: {fileID: 5821752}
   - 50: {fileID: 5043998}
   - 114: {fileID: 11469092}
+  - 114: {fileID: 11496580}
+  - 114: {fileID: 11478868}
   m_Layer: 0
   m_Name: player_ball
   m_TagString: Untagged
@@ -73,7 +75,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e544f0b78949b7e439c773bd62a536bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOVEMENT_SPEED: 10
+  MOVEMENT_SPEED: 8.7
+  MAX_MOVEMENT_SPEED: 25
+  AIR_CONTROL: 1
+  FRICTION: 0.2
+--- !u!114 &11478868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448cd266510f55a49bae4b41173cff3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_DISTANCE: 9
+  MIN_DISTANCE: 3
+  POWER_MODIFIER: 150
+--- !u!114 &11496580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686e64642d7f11f4e90cba3edc75e853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21252794
 SpriteRenderer:
   m_ObjectHideFlags: 1
