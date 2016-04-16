@@ -9,19 +9,21 @@ public class PlayerControls : MonoBehaviour {
 	public float JUMP_SPEED;
 
 	Rigidbody2D playerBody;
-	bool pressedJump;
+    bool pressedJump;
+    bool releasedJump;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		MOVEMENT_SPEED = 5f;
-		JUMP_SPEED = 6f;
+		JUMP_SPEED = 8f;
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		pressedJump = Input.GetButtonDown("Jump");
-	}
+        releasedJump = Input.GetButtonUp("Jump");
+    }
 
 	void FixedUpdate()
 	{
@@ -38,5 +40,11 @@ public class PlayerControls : MonoBehaviour {
 				playerBody.velocity += Vector2.up * JUMP_SPEED;
 			}
 		}
+
+        if (releasedJump)
+        {
+            if (playerBody.velocity.y > 0)
+                playerBody.velocity = new Vector2(playerBody.velocity.x,playerBody.velocity.y/2);
+        }
 	}
 }
