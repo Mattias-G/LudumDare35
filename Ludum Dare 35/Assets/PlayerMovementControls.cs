@@ -6,6 +6,7 @@ public class PlayerMovementControls : MonoBehaviour {
 	[Range(0f, 25f)]
     public float MOVEMENT_SPEED = 5;
     [Range(0f, 25f)]
+    public float MAX_MOVEMENT_SPEED = 7;
 
     Rigidbody2D playerBody;
 	Animator animator;
