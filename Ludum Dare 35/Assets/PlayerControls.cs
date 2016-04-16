@@ -9,6 +9,7 @@ public class PlayerControls : MonoBehaviour {
 	public float JUMP_SPEED;
 
 	Rigidbody2D playerBody;
+	Animator animator;
 	bool pressedJump;
 
 	// Use this for initialization
@@ -16,6 +17,7 @@ public class PlayerControls : MonoBehaviour {
 		MOVEMENT_SPEED = 5f;
 		JUMP_SPEED = 6f;
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
+		animator = gameObject.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,15 @@ public class PlayerControls : MonoBehaviour {
 	{
 		float playerMovementDir = Input.GetAxisRaw("Horizontal");
 		playerBody.velocity = new Vector2(playerMovementDir * MOVEMENT_SPEED, playerBody.velocity.y);
+		if (playerMovementDir == 0)
+		{
+			animator.SetTrigger("Stop");
+		}
+		else
+		{
+			animator.SetTrigger("Run");
+			gameObject.GetComponent<SpriteRenderer>().flipX = playerMovementDir < 0;
+		}
 
 		if (pressedJump)
 		{
@@ -35,6 +46,7 @@ public class PlayerControls : MonoBehaviour {
 			Debug.Log("Jump: " + hit.distance + " : " + (gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1));
 			if (hit.distance <= gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1)
 			{
+				animator.SetTrigger("Jump");
 				playerBody.velocity += Vector2.up * JUMP_SPEED;
 			}
 		}
