@@ -32,6 +32,7 @@ GameObject:
   - 50: {fileID: 5027964}
   - 114: {fileID: 11450726}
   - 95: {fileID: 9578900}
+  - 114: {fileID: 11444680}
   m_Layer: 8
   m_Name: Player_Human
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 4.783955, y: 4.9126987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406242}
@@ -160,6 +161,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11444680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f1051d892d7d34894a14961fcbfd91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JUMP_SPEED: 0
 --- !u!114 &11450726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,7 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MOVEMENT_SPEED: 0
-  JUMP_SPEED: 0
 --- !u!124 &12401176
 Behaviour:
   m_ObjectHideFlags: 1
