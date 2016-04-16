@@ -9,8 +9,10 @@ public class PlayerMovementControls : MonoBehaviour {
     public float MAX_MOVEMENT_SPEED = 7;
 	[Range(0f, 1f)]
 	public float AIR_CONTROL = 0.2f;
+	[Range(0f, 25f)]
+	public float FRICTION = 10f;
 
-    Rigidbody2D playerBody;
+	Rigidbody2D playerBody;
 	Animator animator;
 	Raytracer raytracer;
 
@@ -45,6 +47,7 @@ public class PlayerMovementControls : MonoBehaviour {
 		if (playerMovementDir == 0)
 		{
 			animator.SetTrigger("Stop");
+			playerBody.AddForce(new Vector2(-Mathf.Sign(playerBody.velocity.x)*FRICTION, 0));
 		}
 		else
 		{

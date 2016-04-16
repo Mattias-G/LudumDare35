@@ -106,6 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MOVEMENT_SPEED: 15.5
+  MAX_MOVEMENT_SPEED: 7
+  AIR_CONTROL: 0.8
+  FRICTION: 10
 --- !u!114 &11480664
 MonoBehaviour:
   m_ObjectHideFlags: 1

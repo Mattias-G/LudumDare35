@@ -204,6 +204,10 @@ Prefab:
       propertyPath: AIR_CONTROL
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5027964, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6148674, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
