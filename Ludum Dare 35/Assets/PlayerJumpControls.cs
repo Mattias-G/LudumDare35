@@ -49,9 +49,13 @@ public class PlayerJumpControls : MonoBehaviour {
 		{
 			animator.ResetTrigger("Jump");
 			animator.SetTrigger("Land");
-			if (pressedJump)
+		}
+
+		if (pressedJump)
+		{
+			pressedJump = false;
+			if (raytracer.isOnGround())
 			{
-				pressedJump = false;
 				animator.ResetTrigger("Fall");
 				animator.SetTrigger("Jump");
 				playerBody.velocity += Vector2.up * JUMP_SPEED;
