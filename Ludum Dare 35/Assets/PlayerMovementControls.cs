@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovementControls : MonoBehaviour {
-	
+public class PlayerMovementControls : MonoBehaviour
+{
 	[Range(0f, 25f)]
-    public float MovementForce = 5;
+    public float MovementForce = 15.5f;
     [Range(0f, 25f)]
     public float MaxMovementSpeed = 7;
 	[Range(0f, 1f)]
-	public float AirControl = 0.2f;
+	public float AirControl = 0.8f;
 	[Range(0f, 25f)]
 	public float Friction = 10f;
 
@@ -17,14 +17,16 @@ public class PlayerMovementControls : MonoBehaviour {
 	Raytracer raytracer;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
 		animator = gameObject.GetComponent<Animator>();
 		raytracer = gameObject.GetComponent<Raytracer>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
     }
 
 	void FixedUpdate()
@@ -44,8 +46,12 @@ public class PlayerMovementControls : MonoBehaviour {
 			//Debug.Log("In the Air");
 		}
 
-		playerBody.AddForce(new Vector2(playerMovementForce, 0));
-		playerBody.velocity = new Vector2(Mathf.Clamp(playerBody.velocity.x, -MaxMovementSpeed, MaxMovementSpeed), playerBody.velocity.y);
+        bool isSpeedToHighInMovementDirection =
+            playerMovementForce < 0 && playerBody.velocity.x <= -MaxMovementSpeed ||
+            playerMovementForce > 0 && playerBody.velocity.x >= MaxMovementSpeed;
+        if (!isSpeedToHighInMovementDirection)
+		    playerBody.AddForce(new Vector2(playerMovementForce, 0));
+		
 		if (playerMovementDir == 0)
 		{
 			animator.SetTrigger("Stop");

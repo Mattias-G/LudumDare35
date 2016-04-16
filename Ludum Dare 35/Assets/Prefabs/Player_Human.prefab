@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1051d892d7d34894a14961fcbfd91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JUMP_SPEED: 8.4
+  JumpSpeed: 8
 --- !u!114 &11450726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e544f0b78949b7e439c773bd62a536bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOVEMENT_SPEED: 15.5
-  MAX_MOVEMENT_SPEED: 7
-  AIR_CONTROL: 0.2
-  FRICTION: 10
+  MovementForce: 15.5
+  MaxMovementSpeed: 7
+  AirControl: 0.2
+  Friction: 10
 --- !u!114 &11495310
 MonoBehaviour:
   m_ObjectHideFlags: 1

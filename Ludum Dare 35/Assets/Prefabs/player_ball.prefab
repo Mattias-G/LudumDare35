@@ -75,10 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e544f0b78949b7e439c773bd62a536bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOVEMENT_SPEED: 8.7
-  MAX_MOVEMENT_SPEED: 25
-  AIR_CONTROL: 1
-  FRICTION: 0.2
+  MovementForce: 25
+  MaxMovementSpeed: 7
+  AirControl: 1
+  Friction: 10
 --- !u!114 &11478868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448cd266510f55a49bae4b41173cff3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_DISTANCE: 9
-  MIN_DISTANCE: 3
-  POWER_MODIFIER: 150
+  MaxDistance: 9
+  MinDistance: 3
+  PowerModifier: 150
 --- !u!114 &11496580
 MonoBehaviour:
   m_ObjectHideFlags: 1

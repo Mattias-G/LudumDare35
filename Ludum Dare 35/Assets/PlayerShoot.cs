@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour {
 	public float MaxDistance = 9;
 	[Range(0, 5)]
 	public float MinDistance = 3;
-	public float PowerModifier = 50;
+	public float PowerModifier = 150;
 
 	Rigidbody2D playerBody;
 
