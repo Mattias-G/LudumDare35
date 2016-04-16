@@ -39,7 +39,6 @@ public class PlayerJumpControls : MonoBehaviour {
 	void FixedUpdate()
 	{
 		RaycastHit2D hit = raytracer.getDistanceToGround();
-		Debug.Log(hit.distance);
 		if (hit.distance > gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.2)
 		{
 			//	animator.ResetTrigger("Fall");

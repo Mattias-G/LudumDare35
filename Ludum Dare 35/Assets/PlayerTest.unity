@@ -200,18 +200,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6148674, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-      propertyPath: m_Material
+    - target: {fileID: 11441218, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
+      propertyPath: playerToTurnInto
       value: 
-      objectReference: {fileID: 6200000, guid: 548b44a148148bc478fa4d5e251f662e, type: 2}
-    - target: {fileID: 11450726, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-      propertyPath: MOVEMENT_SPEED
-      value: 15.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11444680, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-      propertyPath: JUMP_SPEED
-      value: 8.4
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 497610, guid: 07a689774baf8124a97787b4a8cbcc0d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
   m_IsPrefabParent: 0
@@ -333,8 +325,8 @@ GameObject:
   - 81: {fileID: 952470761}
   - 114: {fileID: 952470760}
   m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
+  m_Name: Main Camera
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,26 +518,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cb3feec6e93cd74e970649ef2f16e62, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1857518027 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 174140, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-  m_PrefabInternal: {fileID: 339652370}
 --- !u!50 &1857518028 stripped
 Rigidbody2D:
   m_PrefabParentObject: {fileID: 5027964, guid: a602563a17c2ff14ab03f01f78a087bf,
     type: 2}
   m_PrefabInternal: {fileID: 339652370}
---- !u!114 &1857518035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1857518027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686e64642d7f11f4e90cba3edc75e853, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1995260286
 Prefab:
   m_ObjectHideFlags: 0
