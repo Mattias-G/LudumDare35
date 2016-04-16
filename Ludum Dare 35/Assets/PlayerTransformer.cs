@@ -19,7 +19,7 @@ public class PlayerTransformer : MonoBehaviour
 		if (mouseDown)
 		{
             Destroy(gameObject);
-            var newObject = (Transform)Instantiate(playerToTurnInto, gameObject.transform.position, gameObject.transform.rotation);
+            var newObject = (Transform)Instantiate(playerToTurnInto, gameObject.transform.position, Quaternion.identity);
             var body = newObject.gameObject.GetComponent<Rigidbody2D>();
             var camera = Camera.main.GetComponent<CameraMovement>();
             camera.playerRigidBody = body;
