@@ -200,19 +200,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6148674, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 548b44a148148bc478fa4d5e251f662e, type: 2}
-    - target: {fileID: 11450726, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-      propertyPath: MOVEMENT_SPEED
-      value: 15.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11444680, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
-      propertyPath: JUMP_SPEED
-      value: 8.4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6148674, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &512595582
@@ -252,7 +241,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419838, guid: 6cb3feec6e93cd74e970649ef2f16e62, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 419838, guid: 6cb3feec6e93cd74e970649ef2f16e62, type: 2}
       propertyPath: m_LocalScale.y
@@ -373,17 +362,27 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 5027964, guid: a602563a17c2ff14ab03f01f78a087bf,
     type: 2}
   m_PrefabInternal: {fileID: 339652370}
---- !u!114 &1857518035
-MonoBehaviour:
+--- !u!60 &1857518032
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1857518027}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686e64642d7f11f4e90cba3edc75e853, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 548b44a148148bc478fa4d5e251f662e, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.08426905, y: 0.6522455}
+      - {x: -0.2391845, y: 0.4742272}
+      - {x: -0.25414205, y: -0.49664044}
+      - {x: 0.022827558, y: -0.7255614}
+      - {x: 0.28405747, y: -0.48117638}
+      - {x: 0.23518032, y: 0.46741557}
+      - {x: 0.12513795, y: 0.6603923}
 --- !u!1 &2131873173
 GameObject:
   m_ObjectHideFlags: 0

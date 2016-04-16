@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerJumpControls : MonoBehaviour {
 
-	[Range(0f, 25f)]
+	[Range(1f, 25f)]
 	public float JUMP_SPEED = 8;
 
 	Rigidbody2D playerBody;
@@ -38,16 +38,17 @@ public class PlayerJumpControls : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		RaycastHit2D hit = raytracer.getDistanceToGround();
-		Debug.Log(hit.distance);
+		RaycastHit2D hit = raytracer.getRaycastToGround();
 		if (hit.distance > gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.2)
 		{
 			//	animator.ResetTrigger("Fall");
 			animator.SetTrigger("Jump");
 		}
 
-		if (hit.distance <= gameObject.GetComponent<Renderer>().bounds.size.y / 2 + 0.1)
+		if (raytracer.isOnGround())
 		{
+			animator.ResetTrigger("Jump");
+			animator.SetTrigger("Land");
 			if (pressedJump)
 			{
 				pressedJump = false;
@@ -55,8 +56,6 @@ public class PlayerJumpControls : MonoBehaviour {
 				animator.SetTrigger("Jump");
 				playerBody.velocity += Vector2.up * JUMP_SPEED;
 			}
-			animator.ResetTrigger("Jump");
-			animator.SetTrigger("Land");
 		}
 
 		if (releasedJump)
