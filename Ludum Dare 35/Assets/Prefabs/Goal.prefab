@@ -15,7 +15,7 @@ GameObject:
   - 199: {fileID: 19903474}
   - 198: {fileID: 19861556}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
