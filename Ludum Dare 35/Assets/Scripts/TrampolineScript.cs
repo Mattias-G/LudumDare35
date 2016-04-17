@@ -13,10 +13,15 @@ public class TrampolineScript : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Trampoline(collider.gameObject.GetComponent<Rigidbody2D>());
+    }
+
+    void Trampoline(Rigidbody2D body)
     {
         var angle = Mathf.Deg2Rad * gameObject.transform.rotation.eulerAngles.z;
-        var velocity = collision.relativeVelocity;
+        var velocity = -body.velocity;
         velocity = Vector2.Reflect(velocity, new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)));
 
         if (velocity.magnitude < JumpStrength)
@@ -25,7 +30,7 @@ public class TrampolineScript : MonoBehaviour
             velocity *= JumpStrength;
         }
 
-        collision.rigidbody.velocity = velocity;
+        body.velocity = velocity;
 
         if (animator != null)
         {

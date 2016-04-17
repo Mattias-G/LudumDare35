@@ -12,6 +12,7 @@ GameObject:
   - 60: {fileID: 6007086}
   - 114: {fileID: 11421826}
   - 95: {fileID: 9512902}
+  - 61: {fileID: 6173974}
   m_Layer: 0
   m_Name: trampoline
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7334151, y: -2.974629, z: 0}
+  m_LocalPosition: {x: -7.68625, y: -3.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,20 +40,34 @@ PolygonCollider2D:
   m_GameObject: {fileID: 112302}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2cafc0957e2f0a41a445994b2cde587, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -0.8362794, y: 0.24718213}
+    - - {x: -0.84664965, y: 0.24556136}
       - {x: -0.99133444, y: 0.10678673}
       - {x: -0.9860387, y: -0.101934195}
       - {x: -0.8573997, y: -0.24665809}
       - {x: 0.856791, y: -0.24878216}
       - {x: 0.9860387, y: -0.091017246}
       - {x: 0.9860387, y: 0.10405803}
-      - {x: 0.8425324, y: 0.25090623}
+      - {x: 0.8281932, y: 0.24252105}
+--- !u!61 &6173974
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c2cafc0957e2f0a41a445994b2cde587, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.0113630295, y: 0.23482656}
+  serializedVersion: 2
+  m_Size: {x: 1.5871716, y: 0.109896645}
 --- !u!95 &9512902
 Animator:
   serializedVersion: 3
