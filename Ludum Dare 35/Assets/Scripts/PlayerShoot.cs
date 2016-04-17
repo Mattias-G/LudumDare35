@@ -44,6 +44,7 @@ public class PlayerShoot : MonoBehaviour {
         float angle = Mathf.Atan2(y, x);
         float distance = Mathf.Max(Mathf.Min(Mathf.Sqrt(x * x + y * y), MaxDistance), MinDistance);
 
+		playerBody.velocity = new Vector2(0,0);
         playerBody.AddForce(new Vector2(Mathf.Cos(angle) * distance * PowerModifier, Mathf.Sin(angle) * distance * PowerModifier));
     }
 }
