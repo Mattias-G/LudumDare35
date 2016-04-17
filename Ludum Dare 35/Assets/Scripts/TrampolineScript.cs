@@ -26,8 +26,9 @@ public class TrampolineScript : MonoBehaviour
 
         if (velocity.magnitude < JumpStrength)
         {
+            var currentStrength = velocity.magnitude;
             velocity.Normalize();
-            velocity *= JumpStrength;
+            velocity *= (JumpStrength + currentStrength) / 2;
         }
 
         body.velocity = velocity;
