@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11444680}
   - 114: {fileID: 11416586}
   - 114: {fileID: 11495310}
+  - 114: {fileID: 11446920}
   m_Layer: 8
   m_Name: Player_Human
   m_TagString: Player
@@ -115,6 +116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpSpeed: 8
+--- !u!114 &11446920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d9fc7148c2b8a448c5fa091796fe79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerMouseButton: 1
+  playerToTurnInto: {fileID: 497610, guid: 07a689774baf8124a97787b4a8cbcc0d, type: 2}
 --- !u!114 &11450726
 MonoBehaviour:
   m_ObjectHideFlags: 1
