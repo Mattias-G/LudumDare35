@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonListener : MonoBehaviour {
-    
-	public void startGame()
+namespace mainmenu
+{
+    public class ButtonListener : MonoBehaviour
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("PlayerTest");
-    }
+        public void StartGame()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level1");
+        }
 
-    public void exitGame()
-    {
-        Application.Quit();
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
 }
