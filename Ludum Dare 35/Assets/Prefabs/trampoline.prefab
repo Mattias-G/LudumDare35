@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21284946}
   - 60: {fileID: 6007086}
   - 114: {fileID: 11421826}
+  - 95: {fileID: 9512902}
   m_Layer: 0
   m_Name: trampoline
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8472934, y: -3.34, z: 0}
+  m_LocalPosition: {x: -3.7334151, y: -2.974629, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,6 +53,23 @@ PolygonCollider2D:
       - {x: 0.9860387, y: -0.091017246}
       - {x: 0.9860387, y: 0.10405803}
       - {x: 0.8425324, y: 0.25090623}
+--- !u!95 &9512902
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da9df15945f1a564cb55bfd136f732a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11421826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4540534a7971f41822419dd99d2ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpStrength: 10
 --- !u!212 &21284946
 SpriteRenderer:
   m_ObjectHideFlags: 1
