@@ -14,7 +14,6 @@ GameObject:
   - 95: {fileID: 9578900}
   - 114: {fileID: 11450726}
   - 114: {fileID: 11444680}
-  - 114: {fileID: 11495282}
   - 114: {fileID: 11416586}
   - 114: {fileID: 11495310}
   m_Layer: 8
@@ -131,20 +130,6 @@ MonoBehaviour:
   MaxMovementSpeed: 7
   AirControl: 0.8
   Friction: 10
---- !u!114 &11495282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448cd266510f55a49bae4b41173cff3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxDistance: 9
-  MinDistance: 3
-  PowerModifier: 150
 --- !u!114 &11495310
 MonoBehaviour:
   m_ObjectHideFlags: 1
