@@ -46,16 +46,19 @@ public class PlayerMovementControls : MonoBehaviour
 			//Debug.Log("In the Air");
 		}
 
-        bool isSpeedToHighInMovementDirection =
+        bool isSpeedTooHighInMovementDirection =
             playerMovementForce < 0 && playerBody.velocity.x <= -MaxMovementSpeed ||
             playerMovementForce > 0 && playerBody.velocity.x >= MaxMovementSpeed;
-        if (!isSpeedToHighInMovementDirection)
+        if (!isSpeedTooHighInMovementDirection)
 		    playerBody.AddForce(new Vector2(playerMovementForce, 0));
 		
 		if (playerMovementDir == 0)
 		{
 			animator.SetTrigger("Stop");
-			playerBody.AddForce(new Vector2(-Mathf.Sign(playerBody.velocity.x)* friction, 0));
+			if (Mathf.Abs(playerBody.velocity.x) > 0.001)
+				playerBody.AddForce(new Vector2(-Mathf.Sign(playerBody.velocity.x) * friction, 0));
+			else
+				playerBody.velocity = new Vector2(0,playerBody.velocity.y);
 		}
 		else
 		{
