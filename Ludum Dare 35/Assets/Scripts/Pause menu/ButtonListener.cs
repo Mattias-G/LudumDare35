@@ -10,15 +10,12 @@ namespace Pausemenu {
             SetComponentStates(false);
         }
 
-        void SetComponentStates(bool areEnabled)
+
+        void Update()
         {
-            var player = GameObject.Find("player_human");
-            if (player == null)
-                player = GameObject.Find("player_ball");
-            foreach (MonoBehaviour behaviour in player.GetComponents<MonoBehaviour>())
-            {
-                behaviour.enabled = areEnabled;
-            }
+            bool closePauseMenu = Input.GetButtonDown("Cancel");
+            if (closePauseMenu)
+                ResumeGame();
         }
 
 
@@ -38,6 +35,20 @@ namespace Pausemenu {
         public void ExitGame()
         {
             Application.Quit();
+        }
+
+        private void SetComponentStates(bool areEnabled)
+        {
+            var player = GameObject.Find("player_human");
+            if (player == null)
+                player = GameObject.Find("player_ball");
+            if (player == null)
+                Debug.LogError("Didn't find any player!");
+            else
+                foreach (MonoBehaviour behaviour in player.GetComponents<MonoBehaviour>())
+                {
+                    behaviour.enabled = areEnabled;
+                }
         }
     }
 }
