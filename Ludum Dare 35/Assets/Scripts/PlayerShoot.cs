@@ -3,16 +3,19 @@ using System.Collections;
 
 public class PlayerShoot : MonoBehaviour {
 
+	public static bool canShoot;
+
 	[Range(5, 10)]
 	public float MaxDistance = 9;
 	[Range(0, 5)]
 	public float MinDistance = 3;
+	public float Cooldown = 0.5f;
 	public float PowerModifier = 150;
 
 	Rigidbody2D playerBody;
 
     bool wasMouseDownLastUpdate;
-
+	float cooldown;
     
 	void Start ()
     {
@@ -22,10 +25,16 @@ public class PlayerShoot : MonoBehaviour {
     
 	void Update ()
     {
+		if (cooldown > 0)
+		{
+			cooldown -= Time.deltaTime;
+			canShoot = false;
+		}
+
         bool mouseDown = Input.GetMouseButton(0);
         if (mouseDown)
         {
-            if (!wasMouseDownLastUpdate)
+            if (!wasMouseDownLastUpdate && canShoot)
                 Shoot();
             wasMouseDownLastUpdate = true;
         }
@@ -37,6 +46,8 @@ public class PlayerShoot : MonoBehaviour {
 
     private void Shoot()
     {
+		canShoot = false;
+		cooldown = Cooldown;
         Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         Vector3 pos = Camera.main.ScreenToWorldPoint(mousePosition);
         float x = pos.x - playerBody.position.x;

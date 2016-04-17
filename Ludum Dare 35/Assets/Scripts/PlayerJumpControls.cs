@@ -47,11 +47,12 @@ public class PlayerJumpControls : MonoBehaviour
             //	animator.ResetTrigger("Fall");
             animator.SetTrigger("Jump");
         }
-
-        if (raytracer.isOnGround())
+		
+		if (raytracer.isOnGround())
         {
             animator.ResetTrigger("Jump");
             animator.SetTrigger("Land");
+			PlayerShoot.canShoot = true;
         }
 
         if (pressedJump)
