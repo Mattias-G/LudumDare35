@@ -23,6 +23,9 @@ public class PlayerTransformer : MonoBehaviour
             var body = newObject.gameObject.GetComponent<Rigidbody2D>();
             var camera = Camera.main.GetComponent<CameraMovement>();
             camera.playerRigidBody = body;
-        }
+
+			var animator = newObject.gameObject.GetComponent<Animator>();
+			animator.SetTrigger("Transform");
+		}
 	}
 }
