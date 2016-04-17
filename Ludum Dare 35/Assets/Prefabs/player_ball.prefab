@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e544f0b78949b7e439c773bd62a536bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementForce: 25
+  MovementForce: 14
   MaxMovementSpeed: 7
-  AirControl: 1
+  AirControl: 0.8
   Friction: 10
 --- !u!114 &11478868
 MonoBehaviour:
