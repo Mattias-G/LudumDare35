@@ -18,11 +18,14 @@ public class PlayerTransformer : MonoBehaviour
 		bool mouseDown = Input.GetMouseButtonDown(triggerMouseButton);
 		if (mouseDown)
 		{
+            var previousVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
             Destroy(gameObject);
             var newObject = (Transform)Instantiate(playerToTurnInto, gameObject.transform.position, Quaternion.identity);
             var body = newObject.gameObject.GetComponent<Rigidbody2D>();
             var camera = Camera.main.GetComponent<CameraMovement>();
             camera.playerRigidBody = body;
+
+            body.velocity = previousVelocity;
 
 			var animator = newObject.gameObject.GetComponent<Animator>();
 			animator.SetTrigger("Transform");
