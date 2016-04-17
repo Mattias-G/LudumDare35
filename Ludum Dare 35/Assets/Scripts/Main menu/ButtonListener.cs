@@ -7,7 +7,7 @@ namespace mainmenu
     {
         public void StartGame()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("PlayerTest");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level1");
         }
 
         public void ExitGame()
