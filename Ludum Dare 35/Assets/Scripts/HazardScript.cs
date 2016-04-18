@@ -5,9 +5,12 @@ public class HazardScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 		if (other.gameObject.tag == "Player")
-			UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene);
+		{
+			var animator = other.gameObject.GetComponent<Animator>();
+			animator.SetTrigger("Death");
+			other.gameObject.GetComponent<PlayerTransformer>().canTransform = false;
+		}
 	}
 
 }

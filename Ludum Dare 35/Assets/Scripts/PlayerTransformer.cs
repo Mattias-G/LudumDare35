@@ -5,18 +5,19 @@ public class PlayerTransformer : MonoBehaviour
 {
     public int triggerMouseButton;
     public Transform playerToTurnInto;
+	public bool canTransform;
 
     // Use this for initialization
     void Start ()
 	{
-	
+		canTransform = true;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		bool mouseDown = Input.GetMouseButtonDown(triggerMouseButton);
-		if (mouseDown)
+		if (mouseDown && canTransform)
 		{
             var previousVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
 			var playerMovementDir = Input.GetAxisRaw("Horizontal");
