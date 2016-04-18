@@ -19,7 +19,9 @@ public class PlayerTransformer : MonoBehaviour
 		if (mouseDown)
 		{
             var previousVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-            Destroy(gameObject);
+			var playerMovementDir = Input.GetAxisRaw("Horizontal");
+
+			Destroy(gameObject);
             var newObject = (Transform)Instantiate(playerToTurnInto, gameObject.transform.position, Quaternion.identity);
             var body = newObject.gameObject.GetComponent<Rigidbody2D>();
             var camera = Camera.main.GetComponent<CameraMovement>();
@@ -29,6 +31,8 @@ public class PlayerTransformer : MonoBehaviour
 
 			var animator = newObject.gameObject.GetComponent<Animator>();
 			animator.SetTrigger("Transform");
+
+			newObject.GetComponent<SpriteRenderer>().flipX = playerMovementDir < 0;
 		}
 	}
 }
