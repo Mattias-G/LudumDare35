@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerMouseButton: 1
   playerToTurnInto: {fileID: 423514, guid: a602563a17c2ff14ab03f01f78a087bf, type: 2}
+  canTransform: 0
 --- !u!114 &11441556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDistance: 5
-  MinDistance: 3.5
+  MinDistance: 5
   Cooldown: 0.5
   PowerModifier: 150
 --- !u!114 &11496580

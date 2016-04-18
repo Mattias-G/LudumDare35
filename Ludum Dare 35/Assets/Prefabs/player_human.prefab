@@ -15,8 +15,8 @@ GameObject:
   - 114: {fileID: 11450726}
   - 114: {fileID: 11444680}
   - 114: {fileID: 11416586}
-  - 114: {fileID: 11495310}
   - 114: {fileID: 11446920}
+  - 114: {fileID: 11495310}
   m_Layer: 8
   m_Name: player_human
   m_TagString: Player
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerMouseButton: 0
   playerToTurnInto: {fileID: 497610, guid: 07a689774baf8124a97787b4a8cbcc0d, type: 2}
+  canTransform: 0
 --- !u!114 &11444680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerMouseButton: 1
   playerToTurnInto: {fileID: 497610, guid: 07a689774baf8124a97787b4a8cbcc0d, type: 2}
+  canTransform: 0
 --- !u!114 &11450726
 MonoBehaviour:
   m_ObjectHideFlags: 1
