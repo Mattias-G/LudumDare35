@@ -2,53 +2,55 @@
 using System.Collections;
 
 namespace Pausemenu {
-    public class ButtonListener : MonoBehaviour
-    {
-        void Start()
-        {
-            Time.timeScale = 0;
-            SetComponentStates(false);
-        }
+	public class ButtonListener : MonoBehaviour
+	{
+		void Start()
+		{
+			Time.timeScale = 0;
+			SetComponentStates(false);
+		}
 
 
-        void Update()
-        {
-            bool closePauseMenu = Input.GetButtonDown("Cancel");
-            if (closePauseMenu)
-                ResumeGame();
-        }
+		void Update()
+		{
+			bool closePauseMenu = Input.GetButtonDown("Cancel");
+			if (closePauseMenu)
+				ResumeGame();
+		}
 
 
-        public void ResumeGame()
-        {
-            Time.timeScale = 1;
-            SetComponentStates(true);
-            Destroy(gameObject);
-        }
+		public void ResumeGame()
+		{
+			Time.timeScale = 1;
+			SetComponentStates(true);
+			Destroy(gameObject);
+		}
 
-        public void OpenMainMenu()
-        {
-            Time.timeScale = 1;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("main_menu");
-        }
+		public void OpenMainMenu()
+		{
+			Time.timeScale = 1;
+			UnityEngine.SceneManagement.SceneManager.LoadScene("main_menu");
+		}
 
-        public void ExitGame()
-        {
-            Application.Quit();
-        }
+		public void ExitGame()
+		{
+			Application.Quit();
+		}
 
-        private void SetComponentStates(bool areEnabled)
-        {
-            var player = GameObject.Find("player_human");
-            if (player == null)
-                player = GameObject.Find("player_ball");
-            if (player == null)
-                Debug.LogError("Didn't find any player!");
-            else
-                foreach (MonoBehaviour behaviour in player.GetComponents<MonoBehaviour>())
-                {
-                    behaviour.enabled = areEnabled;
-                }
-        }
-    }
+		private void SetComponentStates(bool areEnabled)
+		{
+			var player = GameObject.FindGameObjectWithTag("Player");
+			if (player == null)
+			{
+				Debug.LogError("Didn't find any player!");
+			}
+			else
+			{
+				foreach (MonoBehaviour behaviour in player.GetComponents<MonoBehaviour>())
+				{
+					behaviour.enabled = areEnabled;
+				}
+			}
+		}
+	}
 }
