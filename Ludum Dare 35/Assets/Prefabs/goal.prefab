@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevel: PlayerTest
+  faderPrefab: {fileID: 497076, guid: 914b14dd635ebaf4cbbc5574ab182220, type: 2}
 --- !u!198 &19861556
 ParticleSystem:
   m_ObjectHideFlags: 1

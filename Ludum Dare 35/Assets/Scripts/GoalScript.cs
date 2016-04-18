@@ -4,6 +4,7 @@ using System.Collections;
 public class GoalScript : MonoBehaviour {
 
 	public string NextLevel;
+	public Transform faderPrefab;
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
@@ -19,7 +20,8 @@ public class GoalScript : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene(NextLevel);
+			Transform transform = (Transform)Instantiate(faderPrefab, Vector3.zero, Quaternion.identity);
+			transform.gameObject.GetComponent<SceneFader>().targetScene = NextLevel;
 		}
 	}
 }
